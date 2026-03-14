@@ -15,18 +15,23 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    # Groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
 
+    # Assign containers to groups
     Shot.containers = (shots, updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
     AsteroidField.containers = (updatable)
 
+    # Objects
     asteroid_field = AsteroidField()
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT /2)
+
+    # Game Loop
     number = 5
     while number != 0:
         log_state()
